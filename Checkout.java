@@ -70,7 +70,7 @@ public class Checkout extends Application {
 		bookListContainer.setPrefWidth(850); // Width
 		bookListContainer.setTranslateX(50); // Horizontal position
 		bookListContainer.setTranslateY(25); // Vertical position
-		bookListContainer.setMaxHeight(600); // Height position
+		bookListContainer.setMaxHeight(615); // Height position
 		bookListContainer.setAlignment(Pos.TOP_CENTER); // Alignment Position
 
 		// Container for bill section
@@ -79,49 +79,42 @@ public class Checkout extends Application {
 		billContainer.setPrefWidth(550); // Width
 		billContainer.setTranslateX(75); // Horizontal position
 		billContainer.setTranslateY(25); // Vertical position
-		billContainer.setMaxHeight(475); // Height position
+		billContainer.setMaxHeight(460); // Height position
 		billContainer.setAlignment(Pos.TOP_CENTER); // Alignment Position
 
-		// "CANCEL" button with styling
 		Button cancelButton = new Button("CANCEL ✕");
-		cancelButton.setStyle(
-				"-fx-background-color: #4D220C;" + 		   // Dark brown background
-						"-fx-text-fill: yellow;" +         // Yellow text color
-						"-fx-font-size: 16px;" +           // Font size
-						"-fx-padding: 10 20;" +            // Padding around text
-						"-fx-border-radius: 5;" +          // Rounded corners
-						"-fx-background-radius: 5;" +      // Matches border radius
-						"-fx-cursor: hand;"
-				);
-		cancelButton.setPrefWidth(400); // Width
+        cancelButton.setStyle(
+            "-fx-background-color: #4D220C;" + // Dark brown background
+            "-fx-text-fill: yellow;" +         // Yellow text color
+            "-fx-font-size: 16px;" +           // Font size
+            "-fx-padding: 10 20;" +            // Padding around the text
+            "-fx-border-radius: 5;" +          // Rounded corners
+            "-fx-background-radius: 5;" +      // Matches border radius
+            "-fx-cursor: hand;"
+        );
+        cancelButton.setPrefWidth(225);
 
-		// "CANCEL" button in an HBox for positioning
-		HBox cancelBox = new HBox(cancelButton);
-		cancelBox.setAlignment(Pos.CENTER); // Center button
-		cancelBox.setTranslateX(-225); // Horizontal position
-		cancelBox.setTranslateY(210); // Vertical position
+        // Create "PLACE ORDER" button
+        Button placeOrderButton = new Button("PLACE ORDER ➔");
+        placeOrderButton.setStyle(
+            "-fx-background-color: #4D220C;" + // Dark brown background
+            "-fx-text-fill: yellow;" +         // Yellow text color
+            "-fx-font-size: 16px;" +           // Font size
+            "-fx-padding: 10 20;" +            // Padding around the text
+            "-fx-border-radius: 5;" +          // Rounded corners
+            "-fx-background-radius: 5;" +      // Matches border radius
+            "-fx-cursor: hand;"
+        );
+        placeOrderButton.setPrefWidth(225);
 
-		// "PLACE ORDER" button with styling
-		Button placeOrderButton = new Button("PLACE ORDER ➔");
-		placeOrderButton.setStyle(
-				"-fx-background-color: #4D220C;" +         // Dark brown background
-						"-fx-text-fill: yellow;" +         // Yellow text color
-						"-fx-font-size: 16px;" +           // Font size
-						"-fx-padding: 10 20;" +            // Padding around text
-						"-fx-border-radius: 5;" +          // Rounded corners
-						"-fx-background-radius: 5;" +      // Matches border radius
-						"-fx-cursor: hand;"
-				);
-		placeOrderButton.setPrefWidth(400); // Width
-
-		// "PLACE ORDER" button in an HBox for positioning
-		HBox placeBox = new HBox(placeOrderButton);
-		placeBox.setAlignment(Pos.CENTER); // Center button
-		placeBox.setTranslateX(-450); // Horizontal position
-		placeBox.setTranslateY(275); // Vertical position
-
+        // VBox to hold the buttons
+        VBox buttonBox = new VBox(20, cancelButton, placeOrderButton);
+        buttonBox.setAlignment(Pos.CENTER); // Center the buttons
+        buttonBox.setTranslateX(-265); // Horizontal position
+        buttonBox.setTranslateY(240); // Vertical position
+        
 		// Main layout containing book list and bill sections
-		HBox mainLayout = new HBox(bookListContainer, billContainer, cancelBox, placeBox);
+		HBox mainLayout = new HBox(bookListContainer, billContainer, buttonBox);
 		mainLayout.setBackground(new Background(new BackgroundFill(Color.ORANGE, null, null))); // Background color
 		mainLayout.setPrefHeight(750); // Height
 
@@ -133,7 +126,6 @@ public class Checkout extends Application {
 		primaryStage.setScene(scene); 
 		primaryStage.show();
 	}
-
 
 	public static void main(String[] args) {
 		launch(args);
