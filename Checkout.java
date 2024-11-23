@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
@@ -83,36 +85,46 @@ public class Checkout extends Application {
 		billContainer.setAlignment(Pos.TOP_CENTER); // Alignment Position
 
 		Button cancelButton = new Button("CANCEL ✕");
-        cancelButton.setStyle(
-            "-fx-background-color: #4D220C;" + // Dark brown background
-            "-fx-text-fill: yellow;" +         // Yellow text color
-            "-fx-font-size: 16px;" +           // Font size
-            "-fx-padding: 10 20;" +            // Padding around the text
-            "-fx-border-radius: 5;" +          // Rounded corners
-            "-fx-background-radius: 5;" +      // Matches border radius
-            "-fx-cursor: hand;"
-        );
-        cancelButton.setPrefWidth(225);
+		cancelButton.setStyle(
+				"-fx-background-color: #4D220C;" + // Dark brown background
+						"-fx-text-fill: yellow;" +         // Yellow text color
+						"-fx-font-size: 16px;" +           // Font size
+						"-fx-padding: 10 20;" +            // Padding around the text
+						"-fx-border-radius: 5;" +          // Rounded corners
+						"-fx-background-radius: 5;" +      // Matches border radius
+						"-fx-cursor: hand;"
+				);
+		cancelButton.setPrefWidth(225);
+		cancelButton.setOnAction(e -> {
+			primaryStage.close(); // Close the window when cancel button is clicked
+		});
 
-        // Create "PLACE ORDER" button
-        Button placeOrderButton = new Button("PLACE ORDER ➔");
-        placeOrderButton.setStyle(
-            "-fx-background-color: #4D220C;" + // Dark brown background
-            "-fx-text-fill: yellow;" +         // Yellow text color
-            "-fx-font-size: 16px;" +           // Font size
-            "-fx-padding: 10 20;" +            // Padding around the text
-            "-fx-border-radius: 5;" +          // Rounded corners
-            "-fx-background-radius: 5;" +      // Matches border radius
-            "-fx-cursor: hand;"
-        );
-        placeOrderButton.setPrefWidth(225);
+		// Create "PLACE ORDER" button
+		Button placeOrderButton = new Button("PLACE ORDER ➔");
+		placeOrderButton.setStyle(
+				"-fx-background-color: #4D220C;" + // Dark brown background
+						"-fx-text-fill: yellow;" +         // Yellow text color
+						"-fx-font-size: 16px;" +           // Font size
+						"-fx-padding: 10 20;" +            // Padding around the text
+						"-fx-border-radius: 5;" +          // Rounded corners
+						"-fx-background-radius: 5;" +      // Matches border radius
+						"-fx-cursor: hand;"
+				);
+		placeOrderButton.setPrefWidth(225);
+		placeOrderButton.setOnAction(e -> {
+			Alert confirmationDialog = new Alert(AlertType.INFORMATION); // Pop-up shows up
+			confirmationDialog.setTitle("Order Confirmation"); // Title of pop-up
+			confirmationDialog.setHeaderText("Order Placed Successfully!"); // Header of pop-up
+			confirmationDialog.setContentText("Thank you for your purchase. Your order is being processed."); // Message in pop-up
+			confirmationDialog.showAndWait(); // Displays pop-up until user closes it
+		});
 
-        // VBox to hold the buttons
-        VBox buttonBox = new VBox(20, cancelButton, placeOrderButton);
-        buttonBox.setAlignment(Pos.CENTER); // Center the buttons
-        buttonBox.setTranslateX(-265); // Horizontal position
-        buttonBox.setTranslateY(240); // Vertical position
-        
+		// VBox to hold the buttons
+		VBox buttonBox = new VBox(20, cancelButton, placeOrderButton);
+		buttonBox.setAlignment(Pos.CENTER); // Center the buttons
+		buttonBox.setTranslateX(-265); // Horizontal position
+		buttonBox.setTranslateY(240); // Vertical position
+
 		// Main layout containing book list and bill sections
 		HBox mainLayout = new HBox(bookListContainer, billContainer, buttonBox);
 		mainLayout.setBackground(new Background(new BackgroundFill(Color.ORANGE, null, null))); // Background color
