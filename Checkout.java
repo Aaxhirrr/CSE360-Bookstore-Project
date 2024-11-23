@@ -52,18 +52,25 @@ public class Checkout extends Application {
 		headerBar.setPadding(new Insets(5, 10, 5, 10));
 		headerBar.setSpacing(10);
 
-		// "Order Summary" label config
+		// Label configurations
 		Label orderSumLabel = new Label("Order Summary"); // Content of label
-		orderSumLabel.setFont(Font.font("Arial", FontWeight.BOLD, 30)); // Set font style and size
+		orderSumLabel.setFont(Font.font("Arial", FontWeight.BOLD, 30)); // Font style and size
 		orderSumLabel.setTextFill(Color.BLACK); // Set text color
 		orderSumLabel.setTranslateX(40); // Horizontal position
 		orderSumLabel.setTranslateY(5); // Vertical position
 
-		// VBox for the "Order Summary"
-		VBox orderSumBorder = new VBox(orderSumLabel);
-		orderSumBorder.setAlignment(Pos.CENTER_LEFT); // Centering Position
-		orderSumBorder.setPadding(new Insets(10, 20, 5, 20)); // Padding 
-		orderSumBorder.setBackground(new Background(new BackgroundFill(Color.ORANGE, null, null))); // Color
+		Label billTextLabel = new Label("Bill"); // Content of label
+		billTextLabel.setFont(Font.font("Arial", FontWeight.BOLD, 30)); // Font style and size
+		billTextLabel.setTextFill(Color.BLACK); // Set text color
+		billTextLabel.setTranslateX(40); // Horizontal position
+		billTextLabel.setTranslateY(5); // Vertical position
+
+		HBox labelRow = new HBox(600, orderSumLabel, billTextLabel); // Spacing between labels
+		labelRow.setAlignment(Pos.CENTER_LEFT); // Align items to the left
+		labelRow.setPadding(new Insets(10, 20, 5, 20)); // Padding for spacing
+
+		VBox labelRowBorder = new VBox(labelRow);
+		labelRowBorder.setBackground(new Background(new BackgroundFill(Color.ORANGE, null, null))); // Background color
 		/* -------------------------------------------------------------------------------------------------- */
 
 		// Container for book list
@@ -84,9 +91,10 @@ public class Checkout extends Application {
 		billContainer.setMaxHeight(460); // Height position
 		billContainer.setAlignment(Pos.TOP_CENTER); // Alignment Position
 
+		// Create "PLACE ORDER" button
 		Button cancelButton = new Button("CANCEL ✕");
 		cancelButton.setStyle(
-				"-fx-background-color: #4D220C;" + // Dark brown background
+				"-fx-background-color: #4D220C;" + 		   // Dark brown background
 						"-fx-text-fill: yellow;" +         // Yellow text color
 						"-fx-font-size: 16px;" +           // Font size
 						"-fx-padding: 10 20;" +            // Padding around the text
@@ -102,7 +110,7 @@ public class Checkout extends Application {
 		// Create "PLACE ORDER" button
 		Button placeOrderButton = new Button("PLACE ORDER ➔");
 		placeOrderButton.setStyle(
-				"-fx-background-color: #4D220C;" + // Dark brown background
+				"-fx-background-color: #4D220C;" + 	 	   // Dark brown background
 						"-fx-text-fill: yellow;" +         // Yellow text color
 						"-fx-font-size: 16px;" +           // Font size
 						"-fx-padding: 10 20;" +            // Padding around the text
@@ -125,13 +133,13 @@ public class Checkout extends Application {
 		buttonBox.setTranslateX(-265); // Horizontal position
 		buttonBox.setTranslateY(240); // Vertical position
 
-		// Main layout containing book list and bill sections
+		// Main layout containing book list, bill, and button sections
 		HBox mainLayout = new HBox(bookListContainer, billContainer, buttonBox);
 		mainLayout.setBackground(new Background(new BackgroundFill(Color.ORANGE, null, null))); // Background color
 		mainLayout.setPrefHeight(750); // Height
 
 		// Combine all sections into main
-		VBox main = new VBox(headerBar, orderSumBorder, mainLayout);
+		VBox main = new VBox(headerBar, labelRowBorder, mainLayout);
 
 		// Scene configuration and display
 		Scene scene = new Scene(main, 1500, 750); // Window size and main layout
