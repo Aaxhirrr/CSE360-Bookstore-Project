@@ -1,0 +1,9 @@
+Whispers of the Everwood;Aashir J;Fiction;Used - Acceptable;13.99;Whisp.png
+Unveiling the Universe;Pari Pandey;Science;Used - Good;13.99;Physics.png
+Echoes of the Starbound;Gio Ortiz Rojas;Fiction;Used - Acceptable;11.99;Echo.png
+The Power of Perspective;Maxwell Reinhart;Non-Fiction;Used - Good;19.79;Persp.png
+The Threads of Time;Pari Pandey;History;Used - Good;23.49;Time.png
+Mastering Software Engineering;Gianni Aragones;Science;New;49.85;Soft.png
+Digital Frontier;Aashir J;Science; New;53.75;Cybersec.png
+Breaking the Bouundaries;Gianni Aragones;Non-Fiction;Used - Good;21.79;Break.png
+Shadows of War;Gio Ortiz Rojas;History;New;38.87;War.png
