@@ -8,7 +8,6 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Separator;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -18,8 +17,16 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+//import java.util.ArrayList;
+//import java.util.List;
 
 public class Checkout extends Application {
+
+	/*private final List<Book> cartList = new ArrayList<>();
+
+	public Checkout(List<Book> cartList) {
+		this.cartList = cartList;
+	}*/
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -81,6 +88,13 @@ public class Checkout extends Application {
 		bookListContainer.setTranslateY(25); // Vertical position
 		bookListContainer.setMaxHeight(615); // Height position
 		bookListContainer.setAlignment(Pos.TOP_CENTER); // Alignment Position
+		
+		/* IMPLEMENT BOOK FUNCTIONALITY */
+		
+		
+		
+		
+		/********************************/
 
 		// Container for bill section
 		HBox billContainer = new HBox();
@@ -91,6 +105,31 @@ public class Checkout extends Application {
 		billContainer.setMaxHeight(460); // Height position
 		billContainer.setAlignment(Pos.TOP_CENTER); // Alignment Position
 
+		// IMPLEMENT BILL FUNCTIONALITY (NEEDS WORK)
+		/***********************************************************************************/
+		Label billDetails = new Label("Your Order:");
+		billDetails.setFont(Font.font("Arial", FontWeight.BOLD, 20)); // Font style and size
+		billDetails.setTranslateX(-180); // Horizontal position
+		billContainer.getChildren().add(billDetails);
+		
+		/*VBox billContent = new VBox();
+		billContent.setAlignment(Pos.TOP_RIGHT); // Align content at the top-center of the VBox
+		billContent.setPadding(new Insets(10));  // Add padding inside the VBox
+		billContent.setTranslateX(-100);
+		billContent.setTranslateY(10);
+
+		Label book1 = new Label("Item 1: $10");
+		Label book2 = new Label("Item 2: $15");
+		Label book3 = new Label("Item 3: $20");
+		Label separator = new Label("-----------------------------------------------");
+		Label total = new Label("Total: $25");
+
+		billContent.getChildren().addAll(book1, book2, book3, separator, total);
+		billContainer.getChildren().add(billContent);*/
+		
+		billContainer.setPadding(new Insets(20));
+	    /***********************************************************************************/
+		
 		// Create "PLACE ORDER" button
 		Button cancelButton = new Button("CANCEL ✕");
 		cancelButton.setStyle(
