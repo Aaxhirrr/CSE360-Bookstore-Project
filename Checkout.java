@@ -21,7 +21,7 @@ public class Checkout extends Application {
         // Maroon border at the top
         Region maroonBorder = new Region();
         maroonBorder.setStyle("-fx-background-color: maroon;"); // Color of maroon border
-        maroonBorder.setPrefHeight(100); // Height for maroon border
+        //maroonBorder.setPrefHeight(100); // Height for maroon border
 
         // "Order Summary" label config
         Label orderSumLabel = new Label("Order Summary"); // Content of label
