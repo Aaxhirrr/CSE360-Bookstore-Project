@@ -55,7 +55,7 @@ public class Checkout extends Application {
 		orderSumLabel.setFont(Font.font("Arial", FontWeight.BOLD, 30)); // Set font style and size
 		orderSumLabel.setTextFill(Color.BLACK); // Set text color
 		orderSumLabel.setTranslateX(40); // Horizontal position
-		orderSumLabel.setTranslateY(10); // Vertical position
+		orderSumLabel.setTranslateY(5); // Vertical position
 
 		// VBox for the "Order Summary"
 		VBox orderSumBorder = new VBox(orderSumLabel);
