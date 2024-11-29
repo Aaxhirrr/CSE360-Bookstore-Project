@@ -5,3 +5,4 @@
 // Refactor SellerPageUI logic,
 // Add user role switch logic,
 // Refactor SellerPageUI logic,
+// Fix checkout total rounding issue,
