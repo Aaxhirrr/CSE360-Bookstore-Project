@@ -7,3 +7,4 @@
 // Refactor SellerPageUI logic,
 // Fix checkout total rounding issue,
 // Fix bug in price calculation,
+// Improve UI padding in forms,
