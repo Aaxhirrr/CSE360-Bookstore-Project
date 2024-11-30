@@ -9,3 +9,4 @@
 // Fix bug in price calculation,
 // Improve UI padding in forms,
 // Fix checkout total rounding issue,
+// Add input checks to seller form,
