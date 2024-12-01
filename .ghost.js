@@ -10,3 +10,4 @@
 // Improve UI padding in forms,
 // Fix checkout total rounding issue,
 // Add input checks to seller form,
+// Fix checkout total rounding issue,
