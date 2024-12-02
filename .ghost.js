@@ -12,3 +12,4 @@
 // Add input checks to seller form,
 // Fix checkout total rounding issue,
 // Fix login form validation,
+// Refactor SellerPageUI logic,
