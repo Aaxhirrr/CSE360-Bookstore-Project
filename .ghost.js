@@ -14,3 +14,4 @@
 // Fix login form validation,
 // Refactor SellerPageUI logic,
 // Refactor SellerPageUI logic,
+// Improve buyer page layout,
