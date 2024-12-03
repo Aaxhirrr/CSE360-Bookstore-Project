@@ -15,3 +15,4 @@
 // Refactor SellerPageUI logic,
 // Refactor SellerPageUI logic,
 // Improve buyer page layout,
+// Update README with setup steps,
